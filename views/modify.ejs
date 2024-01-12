@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Modify Booking</title>
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+  </head>
+  <body>
+    <%- include("includes/nav.ejs") %>
+    <div class="main">
+      <h1>Modify Booking</h1>
+      <form action="/modify/<%= booking._id %>" method="post">
+        <div>
+          <label for="name">Name:</label><br />
+          <input
+            type="text"
+            id="name"
+            name="name"
+            placeholder="Name"
+            pattern="[a-zA-Z ]+"
+            title="Must be at least 1 character long, max length of 100 and may only contain characters from A-Z or a-z"
+            minlength="1"
+            maxlength="100"
+            value="<%= booking.name %>"
+            required
+          /><br /><br />
+
+          <%- include("includes/workshopDropdownModify.ejs") %>
+
+          <label for="cardNum">Card Number:</label><br />
+          <input
+            type="text"
+            id="cardNum"
+            name="cardNum"
+            placeholder="Card Number"
+            pattern="^\d{16}$"
+            title="Must be 16 digits"
+            value="<%= booking.cardNum %>"
+            required
+          /><br /><br />
+        </div>
+        <div>
+          <label for="cardExpiry">Card Expiry:</label><br />
+          <input
+            type="text"
+            id="cardExpiry"
+            name="cardExpiry"
+            placeholder="Card Expiry Date"
+            pattern="^\d{2}\/\d{2}$"
+            title="Must be 2 digits for month and 2 digits for year separated by a /"
+            value="<%= booking.cardExpiry %>"
+            required
+          /><br /><br />
+
+          <label for="cardCVV">Card CVV:</label><br />
+          <input
+            type="text"
+            id="cardCVV"
+            name="cardCVV"
+            placeholder="Card CVV Number"
+            pattern="^\d{3}$"
+            title="Must be 3 digits"
+            value="<%= booking.cardCVV %>"
+            required
+          /><br /><br />
+
+          <input type="submit" value="Save" class="button" />
+        </div>
+      </form>
+    </div>
+  </body>
+</html>

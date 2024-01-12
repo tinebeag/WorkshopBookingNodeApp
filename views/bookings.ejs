@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Bookings</title>
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+    <script src="/javascripts/setDefaultDates.js" defer></script>
+  </head>
+  <body>
+    <%- include("includes/nav.ejs") %>
+    <div class="main">
+      <div class="bookingsHeader">
+        <div class="bookingsHeaderLeft">
+          <h1><%= userName %> Bookings</h1>
+        </div>
+        <div class="bookingsHeaderRight">
+          <form action="/bookings" method="post">
+            <label for="startDate">Start Date:</label>
+            <input type="date" name="startDate" class="startDate" required />
+
+            <label for="endDate">End Date:</label>
+            <input type="date" name="endDate" class="endDate" required />
+
+            <label for="name">Name:</label>
+            <input
+              type="text"
+              id="name"
+              name="name"
+              placeholder="Name"
+              pattern="[a-zA-Z ]+"
+              title="Must be at least 1 character long, max length of 100 and may only contain characters from A-Z or a-z"
+              minlength="1"
+              maxlength="100"
+              required
+            />
+            <input type="submit" value="Search" class="button" />
+          </form>
+        </div>
+      </div>
+
+      <%- include("includes/bookingList.ejs") %>
+    </div>
+  </body>
+</html>

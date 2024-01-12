@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Delete Booking</title>
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+  </head>
+  <body>
+    <%- include("includes/nav.ejs") %>
+    <div class="main">
+      <h1>Delete Booking</h1>
+
+      <ul class="list">
+        <p>Confirm the deletion of the following booking</p>
+        <br />
+        <li class="card">
+          <div class="cardEntry">
+            <div class="cardLeft">Name:</div>
+            <div class="cardRight"><%= booking.name %></div>
+          </div>
+          <div class="cardEntry">
+            <div class="cardLeft">Workshop:</div>
+            <div class="cardRight"><%= booking.workshop.title %></div>
+          </div>
+          <div class="cardEntry">
+            <div class="cardLeft">Date:</div>
+            <div class="cardRight">
+              <%= booking.workshop.datetime.toLocaleString("en-GB", {timeStyle:
+              "short", dateStyle: "short"}) %>
+            </div>
+          </div>
+          <div class="cardEntry">
+            <div class="cardLeft">Card Number:</div>
+            <div class="cardRight"><%= booking.cardNum %></div>
+          </div>
+          <div class="cardEntry">
+            <div class="cardLeft bookingExpiry">Card Expiry:</div>
+            <div class="cardRight"><%= booking.cardExpiry %></div>
+            <div class="cardLeft bookingCVV">Card CVV:</div>
+            <div class="cardRight"><%= booking.cardCVV %></div>
+          </div>
+        </li>
+      </ul>
+
+      <form action="/delete/<%= booking._id %>" method="post">
+        <a href="/bookings"
+          ><button class="deleteBtns" type="button">Cancel</button></a
+        >
+        <input type="submit" value="Delete" class="button delBtn deleteBtns" />
+      </form>
+    </div>
+  </body>
+</html>

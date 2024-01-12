@@ -1,0 +1,267 @@
+:root {
+  /* Colorscheme from https://github.com/morhetz/gruvbox */
+  --bg0: #282828;
+  --bg1: #3c3836;
+  --bg2: #504945;
+  --bg3: #665c54;
+  --bg4: #7c6f64;
+
+  --fg0: #fbf1c7;
+  --fg1: #ebdbb2;
+  --fg2: #d5c4a1;
+  --fg3: #bdae93;
+  --fg4: #a89984;
+
+  --red0: #cc241d;
+  --red1: #fb4934;
+
+  --green0: #98971a;
+  --green1: #b8bb26;
+
+  --yellow0: #d79921;
+  --yellow1: #fabd2f;
+
+  --blue0: #458588;
+  --blue1: #83a598;
+
+  --purple0: #b16286;
+  --purple1: #d3869b;
+
+  --aqua0: #689d6a;
+  --aqua1: #8ec07c;
+
+  --orange0: #d65d0e;
+  --orange1: #fe8019;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  color: var(--fg0);
+}
+
+/* Header Styles */
+header ul {
+  list-style-type: none;
+  overflow: hidden;
+  background-color: var(--bg0);
+}
+
+header li {
+  float: left;
+}
+
+header li a {
+  display: block;
+  font-size: 18px;
+  text-align: center;
+  padding: 16px 24px;
+  text-decoration: none;
+  transition: 0.4s;
+}
+
+header li a:hover {
+  background-color: var(--orange0);
+}
+
+/* Body Styles */
+body {
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  background-color: var(--bg1);
+}
+
+.main {
+  margin: 4%;
+}
+
+h1 {
+  margin-bottom: 2%;
+}
+
+button,
+.button {
+  background-color: var(--bg1);
+  border: 2px solid var(--green0);
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  padding: 12px 20px;
+  margin: 4px 2px;
+  transition-duration: 0.4s;
+  cursor: pointer;
+  margin-top: 24px;
+}
+
+button:hover,
+.button:hover {
+  background-color: var(--green0);
+}
+
+select {
+  box-sizing: content-box;
+}
+
+input,
+select {
+  background-color: var(--bg1);
+  padding: 12px 20px;
+  margin: 8px 0;
+  width: 64%;
+  display: inline-block;
+  border: 2px solid var(--fg0);
+  outline: none;
+  transition: 0.4s;
+}
+
+input:focus,
+select:focus {
+  border-color: var(--orange0);
+}
+
+/* 
+Remove the up and down arrows from
+number input fields
+https://www.w3schools.com/howto/////////////howto_css_hide_arrow_number.asp
+Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+/* Firefox */
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+.list {
+  margin: 0 auto;
+  text-align: center;
+}
+
+.card {
+  padding: 12px 20px;
+  margin: 10px;
+  margin-bottom: 14px;
+  border: 2px solid var(--fg0);
+  list-style-type: none;
+  display: inline-block;
+  vertical-align: top;
+  transition: transform 0.4s;
+
+  width: 22%;
+}
+
+.cardEntry {
+  padding: 12px 20px;
+  border-bottom: 1px solid var(--fg0);
+  display: flex;
+  align-items: center;
+  height: 40px;
+}
+
+.cardEntry:last-child {
+  border: none;
+}
+
+.card:hover {
+  transform: scale(1.05);
+}
+
+.cardLeft {
+  width: 30%;
+  color: var(--yellow1);
+}
+
+.cardRight {
+  width: 70%;
+}
+
+.bookingCVV {
+  margin-left: 12%;
+}
+
+.bookingExpiry {
+  margin-left: 4%;
+}
+
+form {
+  margin: 0 auto;
+  text-align: center;
+}
+
+form > div {
+  display: inline-block;
+  vertical-align: top;
+  width: 30%;
+}
+
+label {
+  color: var(--yellow1);
+}
+
+.delBtn,
+.modBtn {
+  margin-left: 5%;
+  margin-right: 5%;
+}
+
+.delBtn {
+  border: 2px solid var(--red0);
+}
+
+.delBtn:hover {
+  background-color: var(--red0);
+}
+
+.deleteBtns {
+  margin: 1% 2%;
+  width: 8%;
+}
+
+em {
+  color: var(--purple1);
+  font-weight: bold;
+}
+
+.bookingsHeader {
+  margin: 0 auto;
+  margin-bottom: 12px;
+  text-align: left;
+}
+
+.bookingsHeader > * {
+  display: inline-block;
+  vertical-align: top;
+}
+
+.bookingsHeaderLeft {
+  width: 40%;
+}
+
+.bookingsHeaderRight {
+  width: 55%;
+  margin-bottom: 10px;
+}
+
+.bookingsHeaderRight > * {
+  position: absolute;
+  right: 6%;
+}
+
+.bookingsHeaderRight > form {
+  margin: 0 auto;
+  text-align: left;
+}
+
+.bookingsHeaderRight > form > input {
+  display: inline-block;
+  width: 12%;
+  margin-top: 0;
+  margin-right: 2%;
+}
+
+.bookingsHeaderRight > form > .startDate,
+.bookingsHeaderRight > form > .endDate {
+  width: 68px;
+}

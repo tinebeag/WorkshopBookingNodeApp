@@ -1,0 +1,45 @@
+<ul class="list">
+  <% if (bookings.length === 0) { %>
+  <p>
+    No bookings found. <br /><br />
+    Click on <em>Create Booking</em> in the navigation bar above to create one
+    <br />or try searching a different name if you see this after a search.
+  </p>
+  <% } else { bookings.forEach(function(booking) { %>
+  <li class="card">
+    <div class="cardEntry">
+      <div class="cardLeft">Name:</div>
+      <div class="cardRight"><%= booking.name %></div>
+    </div>
+    <div class="cardEntry">
+      <div class="cardLeft">Workshop:</div>
+      <div class="cardRight"><%= booking.workshop.title %></div>
+    </div>
+    <div class="cardEntry">
+      <div class="cardLeft">Date:</div>
+      <div class="cardRight">
+        <%= booking.workshop.datetime.toLocaleString("en-GB", {timeStyle:
+        "short", dateStyle: "short"}) %>
+      </div>
+    </div>
+    <div class="cardEntry">
+      <div class="cardLeft">Card Number:</div>
+      <div class="cardRight"><%= booking.cardNum %></div>
+    </div>
+    <div class="cardEntry">
+      <div class="cardLeft bookingExpiry">Card Expiry:</div>
+      <div class="cardRight"><%= booking.cardExpiry %></div>
+      <div class="cardLeft bookingCVV">Card CVV:</div>
+      <div class="cardRight"><%= booking.cardCVV %></div>
+    </div>
+    <div>
+      <a href="/modify/<%= booking._id %>"
+        ><button class="modBtn" type="button">Modify</button></a
+      >
+      <a href="/delete/<%= booking._id %>"
+        ><button class="delBtn" type="button">Delete</button></a
+      >
+    </div>
+  </li>
+  <% });} %>
+</ul>

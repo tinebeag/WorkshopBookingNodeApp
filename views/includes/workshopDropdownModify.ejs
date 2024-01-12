@@ -1,0 +1,15 @@
+<label for="workshop">Workshop: </label><br />
+<select name="workshop" id="workshop" required>
+  <% workshops.forEach(function(workshop) { %> <% if (booking.workshop.id ===
+  workshop.id) { %>
+  <option value="<%= workshop._id %>" selected>
+    <%= workshop.title %>: <%= workshop.datetime.toLocaleString("en-GB",
+    {timeStyle: "short", dateStyle: "short"}) %>
+  </option>
+  <% } else { %>
+  <option value="<%= workshop._id %>">
+    <%= workshop.title %>: <%= workshop.datetime.toLocaleString("en-GB",
+    {timeStyle: "short", dateStyle: "short"}) %>
+  </option>
+  <% } %> <% }); %></select
+><br /><br />

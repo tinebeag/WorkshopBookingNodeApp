@@ -1,0 +1,17 @@
+<ul class="list">
+  <% workshops.forEach(function(workshop) { %>
+  <li class="card">
+    <div class="cardEntry">
+      <div class="cardLeft">Title:</div>
+      <div class="cardRight"><%= workshop.title %></div>
+    </div>
+    <div class="cardEntry">
+      <div class="cardLeft">Date:</div>
+      <div class="cardRight">
+        <%= workshop.datetime.toLocaleString("en-GB", {timeStyle: "short",
+        dateStyle: "short"}) %>
+      </div>
+    </div>
+  </li>
+  <% }); %>
+</ul>

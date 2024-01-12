@@ -1,0 +1,9 @@
+<label for="workshop">Workshop: </label><br />
+<select name="workshop" id="workshop" required>
+  <% workshops.forEach(function(workshop) { %>
+  <option value="<%= workshop._id %>">
+    <%= workshop.title %>: <%= workshop.datetime.toLocaleString("en-GB",
+    {timeStyle: "short", dateStyle: "short"}) %>
+  </option>
+  <% }); %></select
+><br /><br />
